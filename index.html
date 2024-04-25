@@ -15,10 +15,12 @@
         </div>
         <div class="form-container">
             <div class="preamble">
-                This is where I will write all the wonderful reasons to sign up to this service, if you arent happy this will make you happy, if you want to be sad I'm sure we can still provide.
+                <p>This dog <em>loves</em> collecting personal information! Just put those funny little details in the sign up form below to make her <em>happy</em>.</p>
+                <p>You wouldn't want to make a dog sad? Would you?</p>
             </div>
             <div class="form">
-                <form>
+                <form id="sign-up-form">
+                    <p>Gimme all your personal info!</p>
                     <ul>
                         <li>
                             <label for="first_name">First Name</label>
@@ -47,9 +49,9 @@
                     </ul>
                 </form>
             </div>
-            <div class="sign-up">
-                <button>Create Account</button>
-                Already have account? <a href="url">Log in</a>
+            <div class="sign-up-msg">
+                <input type="submit" form="sign-up-form" value="Create Account"/>
+                <p>Already have an account? <a href="url">Log in</a></p>
             </div>
         </div>
     </div>
