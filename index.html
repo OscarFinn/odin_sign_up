@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    
     <title>Sign Up</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
                 <p>You wouldn't want to make a dog sad, would you?</p>
             </div>
             <div class="form">
-                <form id="sign-up-form">
+                <form id="sign-up-form" onsubmit="return passwordCompare()">
                     <p>Gimme all your personal info!</p>
                     <ul>
                         <li>
@@ -49,6 +50,21 @@
                     </ul>
                 </form>
             </div>
+            <script>
+                function passwordCompare() {
+                    let pass1 = document.getElementById("password");
+                    let pass2 = document.getElementById("password_confirm");
+                    if (pass2.value) {
+                        if(pass1.value!=pass2.value) {
+                            alert("Password confirmation must match password!")
+                            return false;
+                        } else {
+                            return true;
+                        }
+                    }
+                }
+            </script>
+
             <div class="sign-up-msg">
                 <input type="submit" form="sign-up-form" value="Create Account"/>
                 <p>Already have an account? <a href="url">Log in</a></p>
