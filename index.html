@@ -19,8 +19,8 @@
                 <p>This dog <em>loves</em> collecting personal information! Just put those funny little details in the sign up form below to make her <em>happy</em>.</p>
                 <p>You wouldn't want to make a dog sad, would you?</p>
             </div>
-            <div class="form">
-                <form id="sign-up-form" onsubmit="return passwordCompare()">
+            <div class="form" onsubmit="return passwordConfirm()">
+                <form id="sign-up-form">
                     <p>Gimme all your personal info!</p>
                     <ul>
                         <li>
@@ -41,11 +41,11 @@
                         </li>
                         <li>
                             <label for="password">Password *</label>
-                            <input type="password" id="password" name="password" minlength="8" required/>
+                            <input type="password" id="password" name="password" onkeyup="passwordCompare()"minlength="8" required/>
                         </li>
                         <li>
                             <label for="password_confirm">Confirm Password *</label>
-                            <input type="password" id="password_confirm" name="passConfirm" minlength="8" required/>
+                            <input type="password" id="password_confirm" name="passConfirm" onkeyup="passwordCompare()" minlength="8" required oninvalid/>
                         </li>
                     </ul>
                 </form>
@@ -56,7 +56,21 @@
                     let pass2 = document.getElementById("password_confirm");
                     if (pass2.value) {
                         if(pass1.value!=pass2.value) {
-                            alert("Password confirmation must match password!")
+                            pass1.style.borderColor="red";
+                            pass2.style.borderColor="red";
+                            pass2.setCustomValidity("Password fields must match.");
+                        } else {
+                            pass1.style.borderColor="green";
+                            pass2.style.borderColor="green";
+                            pass2.setCustomValidity("");
+                        }
+                    }
+                }
+                function passwordConfirm() {
+                    let pass1 = document.getElementById("password");
+                    let pass2 = document.getElementById("password_confirm");
+                    if (pass2.value) {
+                        if(pass1.value!=pass2.value) {
                             return false;
                         } else {
                             return true;
