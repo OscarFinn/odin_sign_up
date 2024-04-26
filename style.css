@@ -179,11 +179,9 @@ input{
 }
 :focus{
   outline:0;
+  border-color:blue;
 }
-input:focus:valid {
-  border-color:green;
-}
-input:focus:invalid{
+input[type="password"]:focus:invalid{
   border-color:red;
 }
 a {
