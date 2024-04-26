@@ -54,9 +54,9 @@
     font-family: title-font;
     src: url(fonts/zanor.otf);
 }
-*{
-    /*border: 2px solid blue; */
-}
+/* *{
+    border: 2px solid blue;
+} */
 :root{
     --background-col: hsl(210, 50%, 95%);
     --button-col: hsl(33, 52%, 61%);
@@ -72,7 +72,7 @@ ul {
 }
 
 li {
-    flex-basis: 49%;
+    flex-basis: 45%;
     flex-shrink: 1;
 }
 li>*{
@@ -89,7 +89,6 @@ input {
 }
 .container{
     display:flex;
-    height: 100vh;
 }
 .img-container{
     background-image: url('images/dog.jpeg');
@@ -128,21 +127,24 @@ input {
 }
 .preamble {
     flex-basis:30vh;
-    min-height: 30vh;
+
     background-color: var(--background-col);
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.5rem;
     display:flex;
+    flex-grow:1;
     flex-direction: column;
     justify-content: flex-end;
 }
 .preamble>p{
     margin-bottom: 2.5rem;
     padding-right: 10vw;
+    max-width:75ch;
 }
 form{
     flex-basis:40vh;
     min-height: 40vh;
+    min-width: 65vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -168,7 +170,7 @@ input[type=submit]{
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    max-width: 30%;
+    width: 256px;
     font-weight: 800;
     margin-bottom: 1rem;
 }
